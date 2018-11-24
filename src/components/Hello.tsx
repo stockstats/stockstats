@@ -1,17 +1,42 @@
 import * as React from 'react';
 
-export interface HelloProps {
-    compiler: string;
-    framework: string;
-}
+const initialState = {
+    clickCount: 1,
+    input: "",
+};
 
-export const Hello = (props: HelloProps) => (
-    <div>
-        <h1>
-            Hello! You, from {props.compiler} and {props.framework}!
-        </h1>
-        <button onClick={() => {alert('click');}}>
-            {props.compiler}
-        </button>
-    </div>
-);
+type State = Readonly<typeof initialState>;
+
+export class HelloState extends React.Component<object, State> {
+    public readonly state: State = initialState;
+
+    public render() {
+        const {input, clickCount} = this.state;
+        return (<div>
+            <h1>
+                Hello, world!
+            </h1>
+            <p>
+                clickCount: {clickCount}
+            </p>
+            <p>
+                inputNumber: {input}
+            </p>
+            <button onClick={this.modifyCount(x => x + 1)}>Increment!</button>
+            <button onClick={this.modifyCount(x => x - 1)}>Decrement!</button>
+            <input type='number'
+                   value={this.state.input}
+                   onChange={e => this.updateInput(e)}/>
+        </div>);
+    }
+
+    private updateInput(e: React.ChangeEvent<HTMLInputElement>) {
+        if (e.target === null) {
+            return;
+        }
+        const value: string = e.target.value;
+        this.setState(s => ({input: value}));
+    }
+
+    private modifyCount = (f: (x: number) => number) => () => this.setState(s => ({clickCount: f(s.clickCount)}));
+}
