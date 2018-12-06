@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {HelloState} from './components/Hello';
+import {CompoundInterest} from './components/CompoundInterest';
 
-ReactDOM.render(<HelloState />, document.getElementById('example'));
+ReactDOM.render(<CompoundInterest />, document.getElementById('example'));
