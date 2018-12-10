@@ -8,10 +8,9 @@ const initialState: SavingsPlan = {
     durationInYears: 20,
 };
 
-type State = Readonly<SavingsPlan>;
 type InputChange = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>;
 
-export class CompoundInterest extends React.Component<{}, State> {
+export class CompoundInterest extends React.Component<{}, SavingsPlan> {
     constructor(props: Readonly<{}>) {
         super(props);
         this.state = initialState;
@@ -52,16 +51,16 @@ export class CompoundInterest extends React.Component<{}, State> {
         );
     }
 
-    private updateState<K extends keyof State>(
+    private updateState<K extends keyof SavingsPlan>(
         key: K,
-        parseInput: (input: string) => State[K]
+        parseInput: (input: string) => SavingsPlan[K]
     ): (e: InputChange) => void {
         return (e: InputChange) => {
             if (e.target === null) {
                 return;
             }
             const parsed: number = parseInput(e.target.value);
-            const newState: State = {...this.state, [key]: parsed};
+            const newState: SavingsPlan = {...this.state, [key]: parsed};
             this.setState(newState);
         };
     }
