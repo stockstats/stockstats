@@ -3,4 +3,4 @@ import * as ReactDOM from 'react-dom';
 
 import {CompoundInterest} from './components/CompoundInterest';
 
-ReactDOM.render(<CompoundInterest />, document.getElementById('example'));
+ReactDOM.render(<CompoundInterest />, document.getElementById('stockstats'));
