@@ -11,10 +11,7 @@ const initialState: SavingsPlan = {
 type InputChange = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>;
 
 export class CompoundInterest extends React.Component<{}, SavingsPlan> {
-    constructor(props: Readonly<{}>) {
-        super(props);
-        this.state = initialState;
-    }
+    public state = initialState;
 
     public render() {
         return (
