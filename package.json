@@ -21,8 +21,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts-ts": "^3.1.0",
-    "recharts": "^1.4.1",
-    "webpack": "^3.11.0"
+    "recharts": "^1.4.1"
   },
   "devDependencies": {
     "@types/react": "^16.7.7",
@@ -32,7 +31,6 @@
     "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
     "tslint-sonarts": "^1.7.0",
-    "typescript": "^3.1.6",
-    "webpack-cli": "^3.1.2"
+    "typescript": "^3.1.6"
   }
 }
