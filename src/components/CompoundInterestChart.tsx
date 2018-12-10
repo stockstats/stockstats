@@ -16,12 +16,14 @@ const range = (a: number, b: number): number[] => {
     return result;
 };
 
-const calculateBarEntries: (savingsPlan: SavingsPlan) => BarEntry[] = (
-    savingsPlan: SavingsPlan
-) => {
-    const r: number = Math.pow(1 + savingsPlan.interestRate / 100, 1.0 / 12);
-    const a: number = savingsPlan.monthlyInvestment;
-    return range(1, savingsPlan.durationInYears + 1).map((year) => {
+const calculateBarEntries = ({
+    monthlyInvestment,
+    interestRate,
+    durationInYears,
+}: SavingsPlan): BarEntry[] => {
+    const r: number = Math.pow(1 + interestRate / 100, 1.0 / 12);
+    const a: number = monthlyInvestment;
+    return range(1, durationInYears + 1).map((year) => {
         const months = year * 12;
         const investment = a * months;
         return {
