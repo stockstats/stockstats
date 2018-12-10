@@ -34,25 +34,23 @@ const calculateBarEntries = ({
     });
 };
 
-export class CompoundInterestChart extends React.Component<SavingsPlan> {
-    public render() {
-        const data: BarEntry[] = calculateBarEntries(this.props);
-        return (
-            <div>
-                <BarChart
-                    width={600}
-                    height={300}
-                    data={data}
-                    margin={{top: 20, right: 30, left: 20, bottom: 5}}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="investment" stackId="a" fill="#8884d8" />
-                    <Bar dataKey="return" stackId="b" fill="#82ca9d" />
-                </BarChart>
-            </div>
-        );
-    }
-}
+export const CompoundInterestChart: React.FC<SavingsPlan> = (savingsPlan) => {
+    const data: BarEntry[] = calculateBarEntries(savingsPlan);
+    return (
+        <div>
+            <BarChart
+                width={600}
+                height={300}
+                data={data}
+                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="investment" stackId="a" fill="#8884d8" />
+                <Bar dataKey="return" stackId="b" fill="#82ca9d" />
+            </BarChart>
+        </div>
+    );
+};
