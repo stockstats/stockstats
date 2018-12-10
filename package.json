@@ -1,6 +1,7 @@
 {
   "name": "ui",
   "version": "1.0.0",
+  "homepage": "https://stockstats.github.io/stockstats/",
   "description": "",
   "main": "index.js",
   "scripts": {
