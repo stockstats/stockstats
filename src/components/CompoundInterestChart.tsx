@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis} from 'recharts';
 
-export type SavingsPlan = {
+export interface SavingsPlan {
     monthlyInvestment: number;
     interestRate: number;
     durationInYears: number;
-};
+}
 
 type BarEntry = {return: number; investment: number; year: string};
 const range = (a: number, b: number): number[] => {
