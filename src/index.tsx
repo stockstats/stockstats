@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {CompoundInterest} from './components/CompoundInterest';
+import {MSCIWorld} from "./components/MSCIWorld";
 
-ReactDOM.render(<CompoundInterest />, document.getElementById('stockstats'));
+ReactDOM.render(<MSCIWorld />, document.getElementById('stockstats'));
