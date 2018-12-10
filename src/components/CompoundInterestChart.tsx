@@ -8,7 +8,7 @@ export type SavingsPlan = {
 };
 
 type BarEntry = {return: number; investment: number; year: string};
-const range: (a: number, b: number) => number[] = (a: number, b: number) => {
+const range = (a: number, b: number): number[] => {
     const result: number[] = [];
     for (let i = a; i < b; i++) {
         result.push(i);
