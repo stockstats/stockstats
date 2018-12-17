@@ -18,7 +18,9 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^3.6.1",
+    "immutable": "^4.0.0-rc.12",
     "moment": "^2.22.2",
+    "pondjs": "^1.0.0-alpha.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-moment": "^0.8.4",
@@ -27,10 +29,13 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.10",
     "@types/recharts": "^1.1.4",
     "awesome-typescript-loader": "^5.2.1",
+    "jest": "^23.6.0",
+    "jsverify": "^0.8.4",
     "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
     "tslint-sonarts": "^1.7.0",
